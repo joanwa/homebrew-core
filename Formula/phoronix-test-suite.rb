@@ -1,8 +1,8 @@
 class PhoronixTestSuite < Formula
-  desc "Automated testing framework"
+  desc "Automated Testing & Benchmarking Platform"
   homepage "http://www.phoronix-test-suite.com/"
-  url "http://www.phoronix-test-suite.com/download.php?file=phoronix-test-suite-5.2.1"
-  sha256 "1186f460691e2fe7a07df5edb8d8ed1ac0c65327512e646da2b2e3a60dda6cd9"
+  url "http://www.phoronix-test-suite.com/download.php?file=phoronix-test-suite-7.0.0"
+  sha256 "ccd3d0b5e79e9cf150d277d402254de66ecf7a993ad78e0b385960c6c29e4824"
 
   bottle do
     cellar :any_skip_relocation
@@ -16,6 +16,10 @@ class PhoronixTestSuite < Formula
 
   def install
     system "./install-sh", prefix
+  end
+
+  test do
+    system bin/"phoronix-test-suite", "version"
   end
 end
 
